@@ -1,0 +1,16 @@
+<p>userform works!</p>
+<p>userform works</p>
+<h2> invoke get API</h2>
+<div *ngIf="userData">
+    <form (submit)="onSubmit($event)" style="border: 1px solid rgb(0, 0, 0); border-radius: 5px;">
+        <label for="fullName">Name:</label><br>
+        <input type="text" id="fullName" [value]="userData.name.title + ' ' + userData.name.first + ' ' + userData.name.last" disabled style=" margin-bottom:10px;"><br>
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" [value]="userData.email" disabled><br>
+        <label for="phone">Phone:</label><br>
+        <input type="text" id="phone" [value]="userData.phone" disabled><br>
+        <label for="userPhoto">Photo:</label><br>
+        <img id="userPhoto" [src]="userData.picture.large" alt="User Photo"><br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
